@@ -7,3 +7,4 @@ To make a new change:
 5. git pull
 6. git add .
 7. git commit -am "Notes"
+8. examples that I am working through: https://vuejs.org/v2/guide/
