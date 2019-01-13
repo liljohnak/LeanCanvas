@@ -1,60 +1,51 @@
 <script src="https://unpkg.com/vue"></script>
 
 <div id="dynamic-component-demo" class="demo">
-  <button
-    v-for="tab in tabs"
-    v-bind:key="tab"
-    v-bind:class="['tab-button', { active: currentTab === tab }]"
-    v-on:click="currentTab = tab"
-  >{{ tab }}</button>
+  <button v-for="tab in tabs" v-bind:key="tab" v-bind:class="['tab-button', { active: currentTab === tab }]" v-on:click="currentTab = tab">{{ tab }}</button>
 
-  <component
-    v-bind:is="currentTabComponent"
-    class="tab"
-  ></component>
+  <component v-bind:is="currentTabComponent" class="tab"></component>
 </div>
 <script>
+Vue.component('tab-problem', {
+  template: '<div>Home component</div>'
+})
+Vue.component('tab-solution', {
+  template: '<div>Posts component</div>'
+})
+Vue.component('tab-unique-value', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-unfair-advantage', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-customers', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-alternatives', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-kpi', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-high-level-concept', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-channels', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-early-adopters', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-structure', {
+  template: '<div>Archive component</div>'
+})
+Vue.component('tab-revenue', {
+  template: '<div>Archive component</div>'
+})
 
-Vue.component('tab-problem', { 
-  template: '<div>Home component</div>' 
-})
-Vue.component('tab-solution', { 
-  template: '<div>Posts component</div>' 
-})
-Vue.component('tab-unique-value', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-unfair-advantage', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-customers', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-alternatives', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-kpi', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-high-level-concept', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-channels', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-early-adopters', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-structure', { 
-  template: '<div>Archive component</div>' 
-})
-Vue.component('tab-revenue', { 
-  template: '<div>Archive component</div>' 
-})
 
-
-var app7 = new Vue({
-  el: '#app-7',
+new Vue({
+  el: '#dynamic-component-demo',
   data: {
     currentTab: 'Problem',
     tabs: ['Problem',
@@ -65,17 +56,18 @@ var app7 = new Vue({
       'Alternatives',
       'KPI',
       'High Level Concept',
-      'Channels'
+      'Channels',
       'Early Adopters',
       'Structure',
       'Revenue',
-      ],
-    problemValueList: ['Government data exchange', 'Small buisnesses need',
-      ],
+    ],
+    problemValueList: ['Government data exchange', 'Small buisnesses need', ],
   },
   computed: {
-    currentTabComponent: function () {
+    currentTabComponent: function() {
       return 'tab-' + this.currentTab.toLowerCase().replace(' ', '-')
     }
+  },
 })
+
 </script>
