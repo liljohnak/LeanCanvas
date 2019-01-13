@@ -9,3 +9,12 @@ To make a new change:
 7. git commit -am "Notes"
 9. git push
 10. examples that I am working through: https://vuejs.org/v2/guide/
+
+
+Topics of interest:
+https://angular.io/
+https://www.websitebuilderexpert.com/building-websites/how-to-build-a-business-website/
+https://aws.amazon.com/free/?awsm.page=1
+https://scotch.io/tutorials/building-a-mini-invoicing-app-with-vue-and-node-database-and-api
+https://www.techonthenet.com/sqlite/truncate.php
+https://nodejs.org/en/about/
