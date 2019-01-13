@@ -1,15 +1,119 @@
 
-<div id="app">
-  {{ message }}
+<div id="app-7">
+<table style="width:100%">
+  <!--
+      Now we provide each todo-item with the todo object
+      it's representing, so that its content can be dynamic.
+      We also need to provide each component with a "key",
+      which will be explained later.
+    -->
+    <todo-table-row
+      v-for="row in leanCanvasTableList"
+      v-bind:todo="row"
+      v-bind:key="row.id"
+    ></todo-table-row>
+</table>
 </div>
 
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
-var app = new Vue({
-  el: '#app',
+
+Vue.component('todo-list', {
+  // The todo-item component now accepts a
+  // "prop", which is like a custom attribute.
+  // This prop is called todo.
+  props: ['todo'],
+  template: '\
+    <th><ol><todo-item\
+      v-for="item in {{ todo.valueList }}"\
+      v-bind:todo="item"\
+      v-bind:key="item.Id"\
+    ></todo-item></th><ol>\
+  ',
+})
+
+Vue.component('todo-item', {
+  // The todo-item component now accepts a
+  // "prop", which is like a custom attribute.
+  // This prop is called todo.
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+Vue.component('todo-table-row', {
+  // The todo-item component now accepts a
+  // "prop", which is like a custom attribute.
+  // This prop is called todo.
+  props: ['todo'],
+  template: '\
+    <tr><todo-list\
+      v-for="item in {{ todo.valueList }}"\
+      v-bind:todo="item"\
+      v-bind:key="item.Id"\
+    ></todo-list></tr>\
+  ',
+})
+
+var app7 = new Vue({
+  el: '#app-7',
   data: {
-    message: 'Hello Vue!'
+    leanCanvasTableList: [
+      {id: 0, valueList:[
+        {id: 0, text: 'Problem', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},
+        {id: 1, text: 'Solution', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 2, text: 'Unique Value', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 3,text: 'Unfair Advantage', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 4, text: 'Customers', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        ]},
+      {id: 1, valueList:[
+        {id: 0, text: 'Alternatives', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 1, text: 'KPI', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 2, text: 'High Level Concept', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 3, text: 'Channels', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 4, text: 'Early Adopters', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        ]},
+      {id: 2, valueList:[
+        {id: 0, text: 'Structure', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        {id: 1, text: 'Revenue', valueList: [
+          { id: 0, text: 'Government data exchange' },
+          { id: 1, text: 'Small buisnesses need' },
+        ]},},
+        ]},
+    ]
   }
 })
 </script>
