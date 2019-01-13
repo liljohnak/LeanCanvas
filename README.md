@@ -24,3 +24,6 @@ https://bytescout.com/blog/node-js-code-examples.html
 https://www.tutorialspoint.com/sqlite/sqlite_injection.htm
 http://geojson.org/
 https://dev.mysql.com/doc/refman/8.0/en/tutorial.html
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+http://www.scala-js.org/doc/tutorial/basic/
+
