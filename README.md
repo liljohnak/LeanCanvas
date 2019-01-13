@@ -18,3 +18,6 @@ https://aws.amazon.com/free/?awsm.page=1
 https://scotch.io/tutorials/building-a-mini-invoicing-app-with-vue-and-node-database-and-api
 https://www.techonthenet.com/sqlite/truncate.php
 https://nodejs.org/en/about/
+https://www.tutorialspoint.com/sqlite/sqlite_injection.htm
+http://geojson.org/
+https://dev.mysql.com/doc/refman/8.0/en/tutorial.html
